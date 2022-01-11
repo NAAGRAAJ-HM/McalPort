@@ -4,7 +4,7 @@
 
 class class_Port{
    public:
-      void InitFunction(void);
+      FUNC(void, PORT_CODE) InitFunction(void);
 };
 
 extern class_Port Port;

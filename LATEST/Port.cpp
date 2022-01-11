@@ -2,6 +2,6 @@
 
 class_Port Port;
 
-void class_Port::InitFunction(void){
+FUNC(void, PORT_CODE) class_Port::InitFunction(void){
 }
 
