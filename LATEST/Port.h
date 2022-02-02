@@ -26,7 +26,6 @@ class class_Port{
 /*****************************************************/
 /* FUNCTIONS                                         */
 /*****************************************************/
-      FUNC(void, PORT_CODE) InitFunction         (void);
       FUNC(void, PORT_CODE) SetPinDirection      (void);
       FUNC(void, PORT_CODE) RefreshPortDirection (void);
       FUNC(void, PORT_CODE) GetVersionInfo       (void);

@@ -1,14 +1,15 @@
+#pragma once
 /*****************************************************/
-/* File   : Port.cpp                                 */
+/* File   : Port_EcuM.h                               */
 /* Author : Naagraaj HM                              */
 /*****************************************************/
 
 /*****************************************************/
 /* #INCLUDES                                         */
 /*****************************************************/
-#include "Port.h"
+#include "Compiler_Cfg_Port.h"
 
-#include "Port_EcuM.h"
+#include "EcuM_Client.h"
 
 /*****************************************************/
 /* #DEFINES                                          */
@@ -21,6 +22,13 @@
 /*****************************************************/
 /* TYPEDEFS                                          */
 /*****************************************************/
+class class_Port_EcuM : public class_EcuM_Client{
+   public:
+/*****************************************************/
+/* FUNCTIONS                                         */
+/*****************************************************/
+      FUNC(void, PORT_CODE) InitFunction(void);
+};
 
 /*****************************************************/
 /* CONSTS                                            */
@@ -33,27 +41,7 @@
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-class_Port Port;
-class_Port_EcuM Port_EcuM;
-class_Port_EcuM *Port_EcuM_ptr = &Port_EcuM;
-
-/*****************************************************/
-/* FUNCTIONS                                         */
-/*****************************************************/
-FUNC(void, PORT_CODE) class_Port_EcuM::InitFunction(void){
-}
-
-FUNC(void, PORT_CODE) class_Port::SetPinDirection(void){
-}
-
-FUNC(void, PORT_CODE) class_Port::RefreshPortDirection(void){
-}
-
-FUNC(void, PORT_CODE) class_Port::GetVersionInfo(void){
-}
-
-FUNC(void, PORT_CODE) class_Port::SetPortMode(void){
-}
+extern class_Port_EcuM *Port_EcuM_ptr;
 
 /*****************************************************/
 /* EOF                                               */
