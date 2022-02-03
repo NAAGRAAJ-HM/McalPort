@@ -41,7 +41,7 @@ class class_Port_EcuM : public class_EcuM_Client{
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-extern class_Port_EcuM *Port_EcuM_ptr;
+extern class_EcuM_Client *EcuM_Client_ptr_Port;
 
 /*****************************************************/
 /* EOF                                               */

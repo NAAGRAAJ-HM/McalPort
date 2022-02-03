@@ -33,9 +33,9 @@
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-class_Port Port;
 class_Port_EcuM Port_EcuM;
-class_Port_EcuM *Port_EcuM_ptr = &Port_EcuM;
+class_EcuM_Client *EcuM_Client_ptr_Port = &Port_EcuM;
+class_Port Port;
 
 /*****************************************************/
 /* FUNCTIONS                                         */
