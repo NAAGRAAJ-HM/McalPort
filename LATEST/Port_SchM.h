@@ -1,6 +1,6 @@
 #pragma once
 /*****************************************************/
-/* File   : Port_EcuM.h                              */
+/* File   : Port_SchM.h                              */
 /* Author : Naagraaj HM                              */
 /*****************************************************/
 
@@ -9,7 +9,7 @@
 /*****************************************************/
 #include "Compiler_Cfg_Port.h"
 
-#include "EcuM_Client.h"
+#include "SchM_Client.h"
 
 /*****************************************************/
 /* #DEFINES                                          */
@@ -22,13 +22,12 @@
 /*****************************************************/
 /* TYPEDEFS                                          */
 /*****************************************************/
-class interface_Port_EcuM : public interface_EcuM_Client{
+class interface_Port_SchM : public interface_SchM_Client{
    public:
 /*****************************************************/
 /* FUNCTIONS                                         */
 /*****************************************************/
-      FUNC(void, PORT_CODE) InitFunction   (void);
-      FUNC(void, PORT_CODE) DeInitFunction (void);
+      FUNC(void, PORT_CODE) MainFunction(void);
 };
 
 /*****************************************************/
@@ -42,7 +41,7 @@ class interface_Port_EcuM : public interface_EcuM_Client{
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-extern interface_Port_EcuM *EcuM_Client_ptr_Port;
+extern interface_Port_SchM *SchM_Client_ptr_Port;
 
 /*****************************************************/
 /* EOF                                               */
