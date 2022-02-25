@@ -27,8 +27,8 @@ class interface_Port_EcuM : public interface_EcuM_Client{
 /*****************************************************/
 /* FUNCTIONS                                         */
 /*****************************************************/
-      FUNC(void, PORT_CODE) InitFunction   (void);
-      FUNC(void, PORT_CODE) DeInitFunction (void);
+      virtual FUNC(void, PORT_CODE) InitFunction   (void) = 0;
+      virtual FUNC(void, PORT_CODE) DeInitFunction (void) = 0;
 };
 
 /*****************************************************/
