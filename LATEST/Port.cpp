@@ -24,8 +24,6 @@
 /*****************************************************/
 class module_Port:
       public abstract_module
-   ,  public interface_Port_EcuM
-   ,  public interface_Port_SchM
 {
    public:
       FUNC(void, PORT_CODE) InitFunction   (void);
@@ -44,10 +42,9 @@ class module_Port:
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-module_Port Port;
-
-interface_Port_EcuM *EcuM_Client_ptr_Port = &Port;
-interface_Port_SchM *SchM_Client_ptr_Port = &Port;
+module_Port    Port;
+infEcuMClient* gptrinfEcuMClient_Port = &Port;
+infSchMClient* gptrinfSchMClient_Port = &Port;
 
 /*****************************************************/
 /* FUNCTIONS                                         */
