@@ -32,7 +32,7 @@
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-extern interface_Port_SchM *SchM_Client_ptr_Port;
+extern infSchMClient *gptrinfSchMClient_Port;
 
 /*****************************************************/
 /* FUNCTIONS                                         */
