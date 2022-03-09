@@ -32,7 +32,7 @@
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-extern infSchMClient *gptrinfSchMClient_Port;
+extern infSchMClient* gptrinfSchMClient_Port;
 
 /*****************************************************/
 /* FUNCTIONS                                         */
