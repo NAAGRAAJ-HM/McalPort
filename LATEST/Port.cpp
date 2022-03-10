@@ -7,8 +7,8 @@
 /* #INCLUDES                                         */
 /*****************************************************/
 #include "module.h"
-#include "Port_EcuM.h"
-#include "Port_SchM.h"
+#include "infPort_EcuM.h"
+#include "infPort_SchM.h"
 #include "Port_Unused.h"
 
 /*****************************************************/
@@ -28,6 +28,7 @@ class module_Port:
    public:
       FUNC(void, PORT_CODE) InitFunction   (void);
       FUNC(void, PORT_CODE) DeInitFunction (void);
+      FUNC(void, PORT_CODE) GetVersionInfo (void);
       FUNC(void, PORT_CODE) MainFunction   (void);
 };
 
@@ -44,6 +45,7 @@ class module_Port:
 /*****************************************************/
 module_Port    Port;
 infEcuMClient* gptrinfEcuMClient_Port = &Port;
+infDcmClient*  gptrinfDcmClient_Port  = &Port;
 infSchMClient* gptrinfSchMClient_Port = &Port;
 
 /*****************************************************/
@@ -53,6 +55,9 @@ FUNC(void, PORT_CODE) module_Port::InitFunction(void){
 }
 
 FUNC(void, PORT_CODE) module_Port::DeInitFunction(void){
+}
+
+FUNC(void, PORT_CODE) module_Port::GetVersionInfo(void){
 }
 
 FUNC(void, PORT_CODE) module_Port::MainFunction(void){
