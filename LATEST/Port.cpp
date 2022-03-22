@@ -7,7 +7,7 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "module.h"
-#include "infPort_Version.h"
+#include "Port_Cfg.h"
 #include "infPort_EcuM.h"
 #include "infPort_Dcm.h"
 #include "infPort_SchM.h"
@@ -15,10 +15,19 @@
 /******************************************************************************/
 /* #DEFINES                                                                   */
 /******************************************************************************/
+#define PORT_AR_RELEASE_MAJOR_VERSION                                          4
+#define PORT_AR_RELEASE_MINOR_VERSION                                          3
 
 /******************************************************************************/
 /* MACROS                                                                     */
 /******************************************************************************/
+#if(PORT_AR_RELEASE_MAJOR_VERSION != STD_AR_RELEASE_MAJOR_VERSION)
+   #error "Incompatible PORT_AR_RELEASE_MAJOR_VERSION!"
+#endif
+
+#if(PORT_AR_RELEASE_MINOR_VERSION != STD_AR_RELEASE_MINOR_VERSION)
+   #error "Incompatible PORT_AR_RELEASE_MINOR_VERSION!"
+#endif
 
 /******************************************************************************/
 /* TYPEDEFS                                                                   */
@@ -61,6 +70,11 @@ FUNC(void, PORT_CODE) module_Port::DeInitFunction(void){
 }
 
 FUNC(void, PORT_CODE) module_Port::GetVersionInfo(void){
+#if(STD_ON == Port_DevErrorDetect)
+//TBD: API parameter check
+   Det_ReportError(
+   );
+#endif
 }
 
 FUNC(void, PORT_CODE) module_Port::MainFunction(void){
