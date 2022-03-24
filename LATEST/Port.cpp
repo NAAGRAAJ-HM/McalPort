@@ -7,7 +7,7 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "module.h"
-#include "Port_Cfg.h"
+#include "CfgPort.h"
 #include "infPort_EcuM.h"
 #include "infPort_Dcm.h"
 #include "infPort_SchM.h"
