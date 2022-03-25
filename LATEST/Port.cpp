@@ -6,11 +6,11 @@
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
-#include "module.h"
-#include "CfgPort.h"
-#include "infPort_EcuM.h"
-#include "infPort_Dcm.h"
-#include "infPort_SchM.h"
+#include "module.hpp"
+#include "CfgPort.hpp"
+#include "infPort_EcuM.hpp"
+#include "infPort_Dcm.hpp"
+#include "infPort_SchM.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
@@ -90,7 +90,7 @@ FUNC(void, PORT_CODE) module_Port::GetVersionInfo(void){
 FUNC(void, PORT_CODE) module_Port::MainFunction(void){
 }
 
-#include "Port_Unused.h"
+#include "Port_Unused.hpp"
 
 FUNC(void, PORT_CODE) class_Port_Unused::SetPinDirection(void){
 }
