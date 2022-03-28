@@ -90,7 +90,12 @@ FUNC(void, PORT_CODE) module_Port::GetVersionInfo(void){
 FUNC(void, PORT_CODE) module_Port::MainFunction(void){
 }
 
-#include "Port_Unused.hpp"
+class class_Port_Unused{
+   public:
+      FUNC(void, PORT_CODE) SetPinDirection      (void);
+      FUNC(void, PORT_CODE) RefreshPortDirection (void);
+      FUNC(void, PORT_CODE) SetPortMode          (void);
+};
 
 FUNC(void, PORT_CODE) class_Port_Unused::SetPinDirection(void){
 }
