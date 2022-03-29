@@ -7,7 +7,6 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "module.hpp"
-#include "CfgPort.hpp"
 #include "infPort_EcuM.hpp"
 #include "infPort_Dcm.hpp"
 #include "infPort_SchM.hpp"
@@ -36,37 +35,40 @@ class module_Port:
       public abstract_module
 {
    public:
+      module_Port(Std_TypeVersionInfo lVersionInfo) : abstract_module(lVersionInfo){
+      }
       FUNC(void, PORT_CODE) InitFunction   (void);
       FUNC(void, PORT_CODE) DeInitFunction (void);
-      FUNC(void, PORT_CODE) GetVersionInfo (void);
       FUNC(void, PORT_CODE) MainFunction   (void);
-
-   private:
-      CONST(Std_TypeVersionInfo, PORT_CONST) VersionInfo = {
-            0x0000
-         ,  0xFFFF
-         ,  0x01
-         ,  '0'
-         ,  '1'
-         ,  '0'
-      };
 };
+
+extern VAR(module_Port, PORT_VAR) Port;
 
 /******************************************************************************/
 /* CONSTS                                                                     */
 /******************************************************************************/
+CONSTP2VAR(infEcuMClient, PORT_VAR, PORT_CONST) gptrinfEcuMClient_Port = &Port;
+CONSTP2VAR(infDcmClient,  PORT_VAR, PORT_CONST) gptrinfDcmClient_Port  = &Port;
+CONSTP2VAR(infSchMClient, PORT_VAR, PORT_CONST) gptrinfSchMClient_Port = &Port;
 
 /******************************************************************************/
 /* PARAMS                                                                     */
 /******************************************************************************/
+#include "CfgPort.hpp"
 
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
-VAR(module_Port, PORT_VAR) Port;
-CONSTP2VAR(infEcuMClient, PORT_VAR, PORT_CONST) gptrinfEcuMClient_Port = &Port;
-CONSTP2VAR(infDcmClient,  PORT_VAR, PORT_CONST) gptrinfDcmClient_Port  = &Port;
-CONSTP2VAR(infSchMClient, PORT_VAR, PORT_CONST) gptrinfSchMClient_Port = &Port;
+VAR(module_Port, PORT_VAR) Port(
+   {
+         0x0000
+      ,  0xFFFF
+      ,  0x01
+      ,  '0'
+      ,  '1'
+      ,  '0'
+   }
+);
 
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
@@ -77,14 +79,6 @@ FUNC(void, PORT_CODE) module_Port::InitFunction(void){
 
 FUNC(void, PORT_CODE) module_Port::DeInitFunction(void){
    Port.IsInitDone = E_NOT_OK;
-}
-
-FUNC(void, PORT_CODE) module_Port::GetVersionInfo(void){
-#if(STD_ON == Port_DevErrorDetect)
-//TBD: API parameter check
-   Det_ReportError(
-   );
-#endif
 }
 
 FUNC(void, PORT_CODE) module_Port::MainFunction(void){
