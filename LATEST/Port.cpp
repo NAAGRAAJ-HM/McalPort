@@ -6,7 +6,7 @@
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
-#include "module.hpp"
+#include "Module.hpp"
 #include "infPort_EcuM.hpp"
 #include "infPort_Dcm.hpp"
 #include "infPort_SchM.hpp"
@@ -37,6 +37,9 @@ class module_Port:
    public:
       module_Port(Std_TypeVersionInfo lVersionInfo) : abstract_module(lVersionInfo){
       }
+      FUNC(void, _CODE) InitFunction(
+         CONSTP2CONST(CfgModule_TypeAbstract, _CONFIG_DATA, _APPL_CONST) lptrCfgModule
+      );
       FUNC(void, PORT_CODE) InitFunction   (void);
       FUNC(void, PORT_CODE) DeInitFunction (void);
       FUNC(void, PORT_CODE) MainFunction   (void);
@@ -73,7 +76,19 @@ VAR(module_Port, PORT_VAR) Port(
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
-FUNC(void, PORT_CODE) module_Port::InitFunction(void){
+FUNC(void, PORT_CODE) module_Port::InitFunction(
+   CONSTP2CONST(CfgPort_Type, CFGPORT_CONFIG_DATA, CFGPORT_APPL_CONST) lptrCfgPort
+){
+   if(NULL_PTR == lptrCfgPort){
+#if(STD_ON == Port_DevErrorDetect)
+      Det_ReportError(
+      );
+#endif
+   }
+   else{
+// check lptrCfgPort for memory faults
+// use PBcfg_Port as back-up configuration
+   }
    Port.IsInitDone = E_OK;
 }
 
