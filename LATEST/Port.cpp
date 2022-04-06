@@ -14,18 +14,18 @@
 /******************************************************************************/
 /* #DEFINES                                                                   */
 /******************************************************************************/
-#define PORT_AR_RELEASE_MAJOR_VERSION                                          4
-#define PORT_AR_RELEASE_MINOR_VERSION                                          3
+#define PORT_AR_RELEASE_VERSION_MAJOR                                          4
+#define PORT_AR_RELEASE_VERSION_MINOR                                          3
 
 /******************************************************************************/
 /* MACROS                                                                     */
 /******************************************************************************/
-#if(PORT_AR_RELEASE_MAJOR_VERSION != STD_AR_RELEASE_MAJOR_VERSION)
-   #error "Incompatible PORT_AR_RELEASE_MAJOR_VERSION!"
+#if(PORT_AR_RELEASE_VERSION_MAJOR != STD_AR_RELEASE_VERSION_MAJOR)
+   #error "Incompatible PORT_AR_RELEASE_VERSION_MAJOR!"
 #endif
 
-#if(PORT_AR_RELEASE_MINOR_VERSION != STD_AR_RELEASE_MINOR_VERSION)
-   #error "Incompatible PORT_AR_RELEASE_MINOR_VERSION!"
+#if(PORT_AR_RELEASE_VERSION_MINOR != STD_AR_RELEASE_VERSION_MINOR)
+   #error "Incompatible PORT_AR_RELEASE_VERSION_MINOR!"
 #endif
 
 /******************************************************************************/
@@ -63,8 +63,10 @@ CONSTP2VAR(infSchMClient, PORT_VAR, PORT_CONST) gptrinfSchMClient_Port = &Port;
 /******************************************************************************/
 VAR(module_Port, PORT_VAR) Port(
    {
-         0x0000
-      ,  0xFFFF
+         PORT_AR_RELEASE_VERSION_MAJOR
+      ,  PORT_AR_RELEASE_VERSION_MINOR
+      ,  0x00
+      ,  0xFF
       ,  0x01
       ,  '0'
       ,  '1'
