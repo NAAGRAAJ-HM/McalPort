@@ -96,8 +96,14 @@ FUNC(void, PORT_CODE) module_Port::InitFunction(
 #endif
       }
       else{
+         if(STD_LOW){
 // check lptrCfgModule for memory faults
-// use PBcfg_Port as back-up configuration
+            lptrCfg = lptrCfgModule;
+         }
+         else{
+// use PBcfg_CanIf as back-up configuration
+            lptrCfg = PBcfg_CanIf;
+         }
       }
       IsInitDone = E_OK;
 #if(STD_ON == Port_InitCheck)
