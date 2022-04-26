@@ -31,8 +31,16 @@
 /******************************************************************************/
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
+class class_Port_Functionality{
+   public:
+      FUNC(void, PORT_CODE) SetPinDirection      (void);
+      FUNC(void, PORT_CODE) RefreshPortDirection (void);
+      FUNC(void, PORT_CODE) SetPortMode          (void);
+};
+
 class module_Port:
       public abstract_module
+   ,  public class_Port_Functionality
 {
    public:
       module_Port(Std_TypeVersionInfo lVersionInfo) : abstract_module(lVersionInfo){
@@ -84,6 +92,10 @@ FUNC(void, PORT_CODE) module_Port::InitFunction(
    if(E_OK == IsInitDone){
 #if(STD_ON == Port_DevErrorDetect)
       Det_ReportError(
+      0 //TBD: IdModule
+   ,  0 //TBD: IdInstance
+   ,  0 //TBD: IdApi
+   ,  0 //TBD: IdError
       );
 #endif
    }
@@ -92,6 +104,10 @@ FUNC(void, PORT_CODE) module_Port::InitFunction(
       if(NULL_PTR == lptrCfgModule){
 #if(STD_ON == Port_DevErrorDetect)
          Det_ReportError(
+      0 //TBD: IdModule
+   ,  0 //TBD: IdInstance
+   ,  0 //TBD: IdApi
+   ,  0 //TBD: IdError
          );
 #endif
       }
@@ -116,6 +132,10 @@ FUNC(void, PORT_CODE) module_Port::DeInitFunction(void){
    if(E_OK != IsInitDone){
 #if(STD_ON == Port_DevErrorDetect)
       Det_ReportError(
+      0 //TBD: IdModule
+   ,  0 //TBD: IdInstance
+   ,  0 //TBD: IdApi
+   ,  0 //TBD: IdError
       );
 #endif
    }
@@ -132,6 +152,10 @@ FUNC(void, PORT_CODE) module_Port::MainFunction(void){
    if(E_OK != IsInitDone){
 #if(STD_ON == Port_DevErrorDetect)
       Det_ReportError(
+      0 //TBD: IdModule
+   ,  0 //TBD: IdInstance
+   ,  0 //TBD: IdApi
+   ,  0 //TBD: IdError
       );
 #endif
    }
@@ -142,20 +166,13 @@ FUNC(void, PORT_CODE) module_Port::MainFunction(void){
 #endif
 }
 
-class class_Port_Unused{
-   public:
-      FUNC(void, PORT_CODE) SetPinDirection      (void);
-      FUNC(void, PORT_CODE) RefreshPortDirection (void);
-      FUNC(void, PORT_CODE) SetPortMode          (void);
-};
-
-FUNC(void, PORT_CODE) class_Port_Unused::SetPinDirection(void){
+FUNC(void, PORT_CODE) class_Port_Functionality::SetPinDirection(void){
 }
 
-FUNC(void, PORT_CODE) class_Port_Unused::RefreshPortDirection(void){
+FUNC(void, PORT_CODE) class_Port_Functionality::RefreshPortDirection(void){
 }
 
-FUNC(void, PORT_CODE) class_Port_Unused::SetPortMode(void){
+FUNC(void, PORT_CODE) class_Port_Functionality::SetPortMode(void){
 }
 
 /******************************************************************************/
