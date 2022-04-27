@@ -31,13 +31,6 @@
 /******************************************************************************/
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
-class class_Port_Functionality{
-   public:
-      FUNC(void, PORT_CODE) SetPinDirection      (void);
-      FUNC(void, PORT_CODE) RefreshPortDirection (void);
-      FUNC(void, PORT_CODE) SetPortMode          (void);
-};
-
 class module_Port:
       public abstract_module
    ,  public class_Port_Functionality
