@@ -7,10 +7,20 @@
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
+#include "CompilerCfg_Port.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
 /******************************************************************************/
+#define PORT_COREFUNCTIONALITIES                                               \
+              FUNC(void, PORT_CODE) SetPinDirection      (void);               \
+              FUNC(void, PORT_CODE) RefreshPortDirection (void);               \
+              FUNC(void, PORT_CODE) SetPortMode          (void);               \
+
+#define PORT_COREFUNCTIONALITIES_VIRTUAL                                       \
+      virtual FUNC(void, PORT_CODE) SetPinDirection      (void) = 0;           \
+      virtual FUNC(void, PORT_CODE) RefreshPortDirection (void) = 0;           \
+      virtual FUNC(void, PORT_CODE) SetPortMode          (void) = 0;           \
 
 /******************************************************************************/
 /* MACROS                                                                     */
@@ -21,9 +31,7 @@
 /******************************************************************************/
 class class_Port_Functionality{
    public:
-      FUNC(void, PORT_CODE) SetPinDirection      (void);
-      FUNC(void, PORT_CODE) RefreshPortDirection (void);
-      FUNC(void, PORT_CODE) SetPortMode          (void);
+      PORT_COREFUNCTIONALITIES_VIRTUAL
 };
 
 /******************************************************************************/

@@ -7,6 +7,7 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "Module.hpp"
+#include "Port_core.hpp"
 #include "infPort_EcuM.hpp"
 #include "infPort_Dcm.hpp"
 #include "infPort_SchM.hpp"
