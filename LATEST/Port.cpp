@@ -7,10 +7,9 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "Module.hpp"
+#include "CfgPort.hpp"
 #include "Port_core.hpp"
-#include "infPort_EcuM.hpp"
-#include "infPort_Dcm.hpp"
-#include "infPort_SchM.hpp"
+#include "infPort.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
@@ -44,6 +43,7 @@ class module_Port:
       );
       FUNC(void, PORT_CODE) DeInitFunction (void);
       FUNC(void, PORT_CODE) MainFunction   (void);
+      PORT_CORE_FUNCTIONALITIES
 };
 
 extern VAR(module_Port, PORT_VAR) Port;
@@ -58,7 +58,6 @@ CONSTP2VAR(infSchMClient, PORT_VAR, PORT_CONST) gptrinfSchMClient_Port = &Port;
 /******************************************************************************/
 /* PARAMS                                                                     */
 /******************************************************************************/
-#include "CfgPort.hpp"
 
 /******************************************************************************/
 /* OBJECTS                                                                    */

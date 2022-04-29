@@ -1,26 +1,19 @@
 #pragma once
 /******************************************************************************/
-/* File   : Port_core.hpp                                                     */
+/* File   : infPort.hpp                                                       */
 /* Author : NAGARAJA HM (c) since 1982. All rights reserved.                  */
 /******************************************************************************/
 
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
-#include "CompilerCfg_Port.hpp"
+#include "infPort_EcuM.hpp"
+#include "infPort_Dcm.hpp"
+#include "infPort_SchM.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
 /******************************************************************************/
-#define PORT_CORE_FUNCTIONALITIES                                              \
-              FUNC(void, PORT_CODE) SetPinDirection      (void);               \
-              FUNC(void, PORT_CODE) RefreshPortDirection (void);               \
-              FUNC(void, PORT_CODE) SetPortMode          (void);               \
-
-#define PORT_CORE_FUNCTIONALITIES_VIRTUAL                                      \
-      virtual FUNC(void, PORT_CODE) SetPinDirection      (void) = 0;           \
-      virtual FUNC(void, PORT_CODE) RefreshPortDirection (void) = 0;           \
-      virtual FUNC(void, PORT_CODE) SetPortMode          (void) = 0;           \
 
 /******************************************************************************/
 /* MACROS                                                                     */
@@ -29,10 +22,6 @@
 /******************************************************************************/
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
-class class_Port_Functionality{
-   public:
-      PORT_CORE_FUNCTIONALITIES_VIRTUAL
-};
 
 /******************************************************************************/
 /* CONSTS                                                                     */
