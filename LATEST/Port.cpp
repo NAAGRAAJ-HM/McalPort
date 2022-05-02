@@ -159,13 +159,13 @@ FUNC(void, PORT_CODE) module_Port::MainFunction(void){
 #endif
 }
 
-FUNC(void, PORT_CODE) class_Port_Functionality::SetPinDirection(void){
+FUNC(void, PORT_CODE) module_Port::SetPinDirection(void){
 }
 
-FUNC(void, PORT_CODE) class_Port_Functionality::RefreshPortDirection(void){
+FUNC(void, PORT_CODE) module_Port::RefreshPortDirection(void){
 }
 
-FUNC(void, PORT_CODE) class_Port_Functionality::SetPortMode(void){
+FUNC(void, PORT_CODE) module_Port::SetPortMode(void){
 }
 
 /******************************************************************************/
