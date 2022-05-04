@@ -113,7 +113,7 @@ FUNC(void, PORT_CODE) module_Port::InitFunction(
             0 //TBD: IdModule
          ,  0 //TBD: IdInstance
          ,  0 //TBD: IdApi
-         ,  0 //TBD: IdError
+         ,  PORT_E_UNINIT
       );
 #endif
    }
@@ -133,7 +133,7 @@ FUNC(void, PORT_CODE) module_Port::DeInitFunction(void){
             0 //TBD: IdModule
          ,  0 //TBD: IdInstance
          ,  0 //TBD: IdApi
-         ,  0 //TBD: IdError
+         ,  PORT_E_UNINIT
       );
 #endif
    }
@@ -152,7 +152,7 @@ FUNC(void, PORT_CODE) module_Port::MainFunction(void){
             0 //TBD: IdModule
          ,  0 //TBD: IdInstance
          ,  0 //TBD: IdApi
-         ,  0 //TBD: IdError
+         ,  PORT_E_UNINIT
       );
 #endif
    }
