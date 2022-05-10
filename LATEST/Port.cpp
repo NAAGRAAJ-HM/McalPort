@@ -89,7 +89,10 @@ FUNC(void, PORT_CODE) module_Port::InitFunction(
    CONSTP2CONST(CfgModule_TypeAbstract, PORT_CONFIG_DATA, PORT_APPL_CONST) lptrCfgModule
 ){
 #if(STD_ON == Port_InitCheck)
-   if(E_OK != IsInitDone){
+   if(
+         E_OK
+      != IsInitDone
+   ){
 #endif
       if(NULL_PTR != lptrCfgModule){
          if(STD_HIGH){
@@ -127,7 +130,10 @@ FUNC(void, PORT_CODE) module_Port::InitFunction(
 
 FUNC(void, PORT_CODE) module_Port::DeInitFunction(void){
 #if(STD_ON == Port_InitCheck)
-   if(E_OK == IsInitDone){
+   if(
+         E_OK
+      == IsInitDone
+   ){
 #endif
 #if(STD_ON == Port_InitCheck)
       IsInitDone = E_NOT_OK;
@@ -147,7 +153,10 @@ FUNC(void, PORT_CODE) module_Port::DeInitFunction(void){
 
 FUNC(void, PORT_CODE) module_Port::MainFunction(void){
 #if(STD_ON == Port_InitCheck)
-   if(E_OK == IsInitDone){
+   if(
+         E_OK
+      == IsInitDone
+   ){
 #endif
 #if(STD_ON == Port_InitCheck)
    }
