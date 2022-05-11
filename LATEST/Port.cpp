@@ -9,7 +9,7 @@
 #include "Module.hpp"
 #include "CfgPort.hpp"
 #include "Port_core.hpp"
-#include "infPort.hpp"
+#include "infPort_Exp.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
@@ -32,6 +32,7 @@
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
 class module_Port:
+   INTERFACES_EXPORTED_PORT
       public abstract_module
    ,  public class_Port_Functionality
 {
