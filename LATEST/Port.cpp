@@ -32,7 +32,7 @@
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
 class module_Port:
-   INTERFACES_EXPORTED_PORT
+      INTERFACES_EXPORTED_PORT
       public abstract_module
    ,  public class_Port_Functionality
 {
