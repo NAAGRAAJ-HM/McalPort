@@ -10,6 +10,7 @@
 #include "CfgPort.hpp"
 #include "Port_core.hpp"
 #include "infPort_Exp.hpp"
+#include "infPort_Imp.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
