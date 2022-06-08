@@ -74,7 +74,7 @@ CONSTP2VAR(infSchMClient, PORT_VAR, PORT_CONST) gptrinfSchMClient_Port = &Port;
 VAR(module_Port, PORT_VAR) Port(
    {
 #if(STD_ON == _ReSIM)
-// char strModuleName[6];
+   char strModuleName[6] = "PORT";
 #else
 #endif
          PORT_AR_RELEASE_VERSION_MAJOR
