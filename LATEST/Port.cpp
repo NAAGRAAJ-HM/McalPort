@@ -130,7 +130,9 @@ FUNC(void, PORT_CODE) module_Port::InitFunction(
 #endif
 }
 
-FUNC(void, PORT_CODE) module_Port::DeInitFunction(void){
+FUNC(void, PORT_CODE) module_Port::DeInitFunction(
+   void
+){
 #if(STD_ON == Port_InitCheck)
    if(
          E_OK
@@ -153,7 +155,9 @@ FUNC(void, PORT_CODE) module_Port::DeInitFunction(void){
 #endif
 }
 
-FUNC(void, PORT_CODE) module_Port::MainFunction(void){
+FUNC(void, PORT_CODE) module_Port::MainFunction(
+   void
+){
 #if(STD_ON == Port_InitCheck)
    if(
          E_OK
@@ -175,13 +179,19 @@ FUNC(void, PORT_CODE) module_Port::MainFunction(void){
 #endif
 }
 
-FUNC(void, PORT_CODE) module_Port::SetPinDirection(void){
+FUNC(void, PORT_CODE) module_Port::SetPinDirection(
+   void
+){
 }
 
-FUNC(void, PORT_CODE) module_Port::RefreshPortDirection(void){
+FUNC(void, PORT_CODE) module_Port::RefreshPortDirection(
+   void
+){
 }
 
-FUNC(void, PORT_CODE) module_Port::SetPortMode(void){
+FUNC(void, PORT_CODE) module_Port::SetPortMode(
+   void
+){
 }
 
 /******************************************************************************/
