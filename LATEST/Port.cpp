@@ -7,9 +7,7 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "Module.hpp"
-#include "CfgPort.hpp"
-#include "Port_core.hpp"
-#include "infPort_Exp.hpp"
+#include "Port.hpp"
 #include "infPort_Imp.hpp"
 
 /******************************************************************************/
@@ -32,26 +30,6 @@
 /******************************************************************************/
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
-class module_Port:
-      INTERFACES_EXPORTED_PORT
-      public abstract_module
-   ,  public class_Port_Functionality
-{
-   private:
-/******************************************************************************/
-/* OBJECTS                                                                    */
-/******************************************************************************/
-
-   public:
-      FUNC(void, PORT_CODE) InitFunction(
-         CONSTP2CONST(CfgModule_TypeAbstract, PORT_CONFIG_DATA, PORT_APPL_CONST) lptrCfgModule
-      );
-      FUNC(void, PORT_CODE) DeInitFunction (void);
-      FUNC(void, PORT_CODE) MainFunction   (void);
-      PORT_CORE_FUNCTIONALITIES
-};
-
-extern VAR(module_Port, PORT_VAR) Port;
 
 /******************************************************************************/
 /* CONSTS                                                                     */
