@@ -8,9 +8,7 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "infPort_EcuM.hpp"
-#include "infPort_Dcm.hpp"
 #include "infPort_Det.hpp"
-#include "infPort_SchM.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
