@@ -7,6 +7,7 @@
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
+#include "ConstPort.hpp"
 #include "CfgPort.hpp"
 #include "Port_core.hpp"
 #include "infPort_Exp.hpp"
@@ -31,13 +32,15 @@ class module_Port:
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
+      const ConstPort_Type* lptrConst = (ConstPort_Type*)NULL_PTR;
 
    public:
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
       FUNC(void, PORT_CODE) InitFunction(
-         CONSTP2CONST(CfgModule_TypeAbstract, PORT_CONFIG_DATA, PORT_APPL_CONST) lptrCfgModule
+            CONSTP2CONST(ConstModule_TypeAbstract, PORT_CONST,       PORT_APPL_CONST) lptrConstModule
+         ,  CONSTP2CONST(CfgModule_TypeAbstract,   PORT_CONFIG_DATA, PORT_APPL_CONST) lptrCfgModule
       );
       FUNC(void, PORT_CODE) DeInitFunction (void);
       FUNC(void, PORT_CODE) MainFunction   (void);

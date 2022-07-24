@@ -48,7 +48,8 @@ VAR(module_Port, PORT_VAR) Port;
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
 FUNC(void, PORT_CODE) module_Port::InitFunction(
-   CONSTP2CONST(CfgModule_TypeAbstract, PORT_CONFIG_DATA, PORT_APPL_CONST) lptrCfgModule
+      CONSTP2CONST(ConstModule_TypeAbstract, PORT_CONST,       PORT_APPL_CONST) lptrConstModule
+   ,  CONSTP2CONST(CfgModule_TypeAbstract,   PORT_CONFIG_DATA, PORT_APPL_CONST) lptrCfgModule
 ){
 #if(STD_ON == Port_InitCheck)
    if(
@@ -56,8 +57,12 @@ FUNC(void, PORT_CODE) module_Port::InitFunction(
       != IsInitDone
    ){
 #endif
-      if(NULL_PTR != lptrCfgModule){
-         lptrCfg = lptrCfgModule;
+      if(
+            (NULL_PTR != lptrConstModule)
+         && (NULL_PTR != lptrCfgModule)
+      ){
+         lptrConst = lptrConstModule;
+         lptrCfg   = lptrCfgModule;
       }
       else{
 #if(STD_ON == Port_DevErrorDetect)
