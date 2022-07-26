@@ -61,7 +61,7 @@ FUNC(void, PORT_CODE) module_Port::InitFunction(
             (NULL_PTR != lptrConstModule)
          && (NULL_PTR != lptrCfgModule)
       ){
-         lptrConst = lptrConstModule;
+         lptrConst = (const ConstPort_Type*)lptrConstModule;
          lptrCfg   = lptrCfgModule;
       }
       else{
