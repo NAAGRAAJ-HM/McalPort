@@ -13,18 +13,18 @@
 /******************************************************************************/
 /* #DEFINES                                                                   */
 /******************************************************************************/
-#define MCALPORT_AR_RELEASE_VERSION_MAJOR                                          4
-#define MCALPORT_AR_RELEASE_VERSION_MINOR                                          3
+#define PORT_AR_RELEASE_VERSION_MAJOR                                          4
+#define PORT_AR_RELEASE_VERSION_MINOR                                          3
 
 /******************************************************************************/
 /* MACROS                                                                     */
 /******************************************************************************/
-#if(MCALPORT_AR_RELEASE_VERSION_MAJOR != STD_AR_RELEASE_VERSION_MAJOR)
-   #error "Incompatible MCALPORT_AR_RELEASE_VERSION_MAJOR!"
+#if(PORT_AR_RELEASE_VERSION_MAJOR != STD_AR_RELEASE_VERSION_MAJOR)
+   #error "Incompatible PORT_AR_RELEASE_VERSION_MAJOR!"
 #endif
 
-#if(MCALPORT_AR_RELEASE_VERSION_MINOR != STD_AR_RELEASE_VERSION_MINOR)
-   #error "Incompatible MCALPORT_AR_RELEASE_VERSION_MINOR!"
+#if(PORT_AR_RELEASE_VERSION_MINOR != STD_AR_RELEASE_VERSION_MINOR)
+   #error "Incompatible PORT_AR_RELEASE_VERSION_MINOR!"
 #endif
 
 /******************************************************************************/
@@ -42,14 +42,14 @@
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
-VAR(module_McalPort, MCALPORT_VAR) McalPort;
+VAR(module_McalPort, PORT_VAR) McalPort;
 
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
-FUNC(void, MCALPORT_CODE) module_McalPort::InitFunction(
-      CONSTP2CONST(ConstModule_TypeAbstract, MCALPORT_CONST,       MCALPORT_APPL_CONST) lptrConstModule
-   ,  CONSTP2CONST(CfgModule_TypeAbstract,   MCALPORT_CONFIG_DATA, MCALPORT_APPL_CONST) lptrCfgModule
+FUNC(void, PORT_CODE) module_McalPort::InitFunction(
+      CONSTP2CONST(ConstModule_TypeAbstract, PORT_CONST,       PORT_APPL_CONST) lptrConstModule
+   ,  CONSTP2CONST(CfgModule_TypeAbstract,   PORT_CONFIG_DATA, PORT_APPL_CONST) lptrCfgModule
 ){
 #if(STD_ON == McalPort_InitCheck)
    if(
@@ -83,14 +83,14 @@ FUNC(void, MCALPORT_CODE) module_McalPort::InitFunction(
             0 //TBD: IdModule
          ,  0 //TBD: IdInstance
          ,  0 //TBD: IdApi
-         ,  MCALPORT_E_UNINIT
+         ,  PORT_E_UNINIT
       );
 #endif
    }
 #endif
 }
 
-FUNC(void, MCALPORT_CODE) module_McalPort::DeInitFunction(
+FUNC(void, PORT_CODE) module_McalPort::DeInitFunction(
    void
 ){
 #if(STD_ON == McalPort_InitCheck)
@@ -108,14 +108,14 @@ FUNC(void, MCALPORT_CODE) module_McalPort::DeInitFunction(
             0 //TBD: IdModule
          ,  0 //TBD: IdInstance
          ,  0 //TBD: IdApi
-         ,  MCALPORT_E_UNINIT
+         ,  PORT_E_UNINIT
       );
 #endif
    }
 #endif
 }
 
-FUNC(void, MCALPORT_CODE) module_McalPort::MainFunction(
+FUNC(void, PORT_CODE) module_McalPort::MainFunction(
    void
 ){
 #if(STD_ON == McalPort_InitCheck)
@@ -132,24 +132,24 @@ FUNC(void, MCALPORT_CODE) module_McalPort::MainFunction(
             0 //TBD: IdModule
          ,  0 //TBD: IdInstance
          ,  0 //TBD: IdApi
-         ,  MCALPORT_E_UNINIT
+         ,  PORT_E_UNINIT
       );
 #endif
    }
 #endif
 }
 
-FUNC(void, MCALPORT_CODE) module_McalPort::SetPinDirection(
+FUNC(void, PORT_CODE) module_McalPort::SetPinDirection(
    void
 ){
 }
 
-FUNC(void, MCALPORT_CODE) module_McalPort::RefreshMcalPortDirection(
+FUNC(void, PORT_CODE) module_McalPort::RefreshMcalPortDirection(
    void
 ){
 }
 
-FUNC(void, MCALPORT_CODE) module_McalPort::SetMcalPortMode(
+FUNC(void, PORT_CODE) module_McalPort::SetMcalPortMode(
    void
 ){
 }

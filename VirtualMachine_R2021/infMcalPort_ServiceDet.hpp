@@ -1,6 +1,6 @@
 #pragma once
 /******************************************************************************/
-/* File   : McalPort_core.hpp                                                     */
+/* File   : infMcalPort_ServiceDet.hpp                                                   */
 /* Author : NAGARAJA HM (c) since 1982. All rights reserved.                  */
 /******************************************************************************/
 
@@ -12,15 +12,6 @@
 /******************************************************************************/
 /* #DEFINES                                                                   */
 /******************************************************************************/
-#define MCALPORT_CORE_FUNCTIONALITIES                                              \
-              FUNC(void, MCALPORT_CODE) SetPinDirection      (void);               \
-              FUNC(void, MCALPORT_CODE) RefreshMcalPortDirection (void);               \
-              FUNC(void, MCALPORT_CODE) SetMcalPortMode          (void);               \
-
-#define MCALPORT_CORE_FUNCTIONALITIES_VIRTUAL                                      \
-      virtual FUNC(void, MCALPORT_CODE) SetPinDirection      (void) = 0;           \
-      virtual FUNC(void, MCALPORT_CODE) RefreshMcalPortDirection (void) = 0;           \
-      virtual FUNC(void, MCALPORT_CODE) SetMcalPortMode          (void) = 0;           \
 
 /******************************************************************************/
 /* MACROS                                                                     */
@@ -29,10 +20,9 @@
 /******************************************************************************/
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
-class class_McalPort_Functionality{
-   public:
-      MCALPORT_CORE_FUNCTIONALITIES_VIRTUAL
-};
+typedef enum{
+      PORT_E_UNINIT
+}McalPort_TypeServiceDetErrorCode;
 
 /******************************************************************************/
 /* CONSTS                                                                     */

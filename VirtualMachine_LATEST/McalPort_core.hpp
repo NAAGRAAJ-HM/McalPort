@@ -12,15 +12,15 @@
 /******************************************************************************/
 /* #DEFINES                                                                   */
 /******************************************************************************/
-#define PORT_CORE_FUNCTIONALITIES                                              \
-              FUNC(void, PORT_CODE) SetPinDirection      (void);               \
-              FUNC(void, PORT_CODE) RefreshMcalPortDirection (void);               \
-              FUNC(void, PORT_CODE) SetMcalPortMode          (void);               \
+#define MCALPORT_CORE_FUNCTIONALITIES                                              \
+              FUNC(void, MCALPORT_CODE) SetPinDirection      (void);               \
+              FUNC(void, MCALPORT_CODE) RefreshMcalPortDirection (void);               \
+              FUNC(void, MCALPORT_CODE) SetMcalPortMode          (void);               \
 
-#define PORT_CORE_FUNCTIONALITIES_VIRTUAL                                      \
-      virtual FUNC(void, PORT_CODE) SetPinDirection      (void) = 0;           \
-      virtual FUNC(void, PORT_CODE) RefreshMcalPortDirection (void) = 0;           \
-      virtual FUNC(void, PORT_CODE) SetMcalPortMode          (void) = 0;           \
+#define MCALPORT_CORE_FUNCTIONALITIES_VIRTUAL                                      \
+      virtual FUNC(void, MCALPORT_CODE) SetPinDirection      (void) = 0;           \
+      virtual FUNC(void, MCALPORT_CODE) RefreshMcalPortDirection (void) = 0;           \
+      virtual FUNC(void, MCALPORT_CODE) SetMcalPortMode          (void) = 0;           \
 
 /******************************************************************************/
 /* MACROS                                                                     */
@@ -31,7 +31,7 @@
 /******************************************************************************/
 class class_McalPort_Functionality{
    public:
-      PORT_CORE_FUNCTIONALITIES_VIRTUAL
+      MCALPORT_CORE_FUNCTIONALITIES_VIRTUAL
 };
 
 /******************************************************************************/

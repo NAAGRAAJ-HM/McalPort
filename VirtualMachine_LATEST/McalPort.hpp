@@ -24,7 +24,7 @@
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
 class module_McalPort:
-      INTERFACES_EXPORTED_PORT
+      INTERFACES_EXPORTED_MCALPORT
       public abstract_module
    ,  public class_McalPort_Functionality
 {
@@ -38,13 +38,13 @@ class module_McalPort:
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
-      FUNC(void, PORT_CODE) InitFunction(
-            CONSTP2CONST(ConstModule_TypeAbstract, PORT_CONST,       PORT_APPL_CONST) lptrConstModule
-         ,  CONSTP2CONST(CfgModule_TypeAbstract,   PORT_CONFIG_DATA, PORT_APPL_CONST) lptrCfgModule
+      FUNC(void, MCALPORT_CODE) InitFunction(
+            CONSTP2CONST(ConstModule_TypeAbstract, MCALPORT_CONST,       MCALPORT_APPL_CONST) lptrConstModule
+         ,  CONSTP2CONST(CfgModule_TypeAbstract,   MCALPORT_CONFIG_DATA, MCALPORT_APPL_CONST) lptrCfgModule
       );
-      FUNC(void, PORT_CODE) DeInitFunction (void);
-      FUNC(void, PORT_CODE) MainFunction   (void);
-      PORT_CORE_FUNCTIONALITIES
+      FUNC(void, MCALPORT_CODE) DeInitFunction (void);
+      FUNC(void, MCALPORT_CODE) MainFunction   (void);
+      MCALPORT_CORE_FUNCTIONALITIES
 };
 
 /******************************************************************************/
@@ -58,7 +58,7 @@ class module_McalPort:
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
-extern VAR(module_McalPort, PORT_VAR) McalPort;
+extern VAR(module_McalPort, MCALPORT_VAR) McalPort;
 
 /******************************************************************************/
 /* EOF                                                                        */
