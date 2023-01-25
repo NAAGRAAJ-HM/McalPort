@@ -1,13 +1,13 @@
 #pragma once
 /******************************************************************************/
-/* File   : McalPort.hpp                                                          */
+/* File   : McalPort.hpp                                                      */
 /* Author : NAGARAJA HM (c) since 1982. All rights reserved.                  */
 /******************************************************************************/
 
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
-#include "ConstMcalPort.hpp"
+#include "infMcalPort_ServiceNvM_Types.hpp"
 #include "CfgMcalPort.hpp"
 #include "McalPort_core.hpp"
 #include "infMcalPort_Exp.hpp"
